@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#102542" />
+  <title>Risultati Festa Nazionale 2026</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">🏆</div>
+      <div>
+        <div class="eyebrow">44ª FESTA NAZIONALE</div>
+        <h1>Risultati 2026</h1>
+      </div>
+    </div>
+    <div class="sync-pill" id="syncPill">Caricamento…</div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <p class="kicker">RISULTATI E CLASSIFICHE</p>
+      <h2>Segui le gare aggiornate</h2>
+      <p class="hero-copy">Demo collegata direttamente al file Excel pubblicato su GitHub.</p>
+      <div class="update-row">
+        <span class="live-dot"></span>
+        <span id="lastUpdate">Lettura del file risultati…</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="competizioni-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">DEMO</p>
+          <h3 id="competizioni-title">Scegli la categoria</h3>
+        </div>
+        <button class="ghost-button" id="refreshBtn" type="button">↻ Aggiorna</button>
+      </div>
+      <div id="competitionGrid" class="competition-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="detailSection" class="detail-section hidden" aria-live="polite">
+      <button class="back-button" id="backBtn" type="button">← Tutte le categorie</button>
+      <div id="detailHeader"></div>
+
+      <div class="segmented" role="tablist" aria-label="Visualizzazione categoria">
+        <button class="segment active" type="button" data-tab="matches" role="tab" aria-selected="true">Partite</button>
+        <button class="segment" type="button" data-tab="standings" role="tab" aria-selected="false">Classifica</button>
+      </div>
+
+      <div id="matchesPanel" class="tab-panel"></div>
+      <div id="standingsPanel" class="tab-panel hidden"></div>
+    </section>
+
+    <section id="errorBox" class="error-box hidden" role="alert"></section>
+  </main>
+
+  <footer>
+    <span>Demo GitHub Pages · 3 fogli Excel</span>
+    <span>Aggiornamento automatico ogni 60 secondi</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
